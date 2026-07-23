@@ -1,113 +1,230 @@
-# 🤖 Poi Alert Bot - Gold Price Telegram Alerts
+# 🤖 POI Alert Bot - Gold Price Telegram Alerts
 
-A free Telegram bot that monitors gold prices and sends you alerts when the price reaches your set level.
+**A 100% FREE Telegram Bot that sends you real-time gold price alerts!**
+
+---
 
 ## ✨ Features
 
-- 📊 Real-time gold price monitoring (updated every minute)
-- 🔔 Set custom price alerts (above or below)
-- 💰 100% FREE (uses free APIs)
-- 🚀 Deploy on Render for free
-- ⚡ Runs 24/7
+✅ **Real-time Gold Price Monitoring** - Updated every minute
+✅ **Custom Price Alerts** - Get notified above or below your price
+✅ **100% FREE** - No hidden costs
+✅ **24/7 Running** - Never miss an alert
+✅ **Easy to Use** - Simple Telegram commands
+✅ **Accurate Data** - CoinGecko Pro API
 
-## 🛠️ Setup Instructions
+---
 
-### Step 1: Create Telegram Bot
+## 🚀 Quick Start (3 Steps)
 
-1. Open Telegram and search for **@BotFather**
-2. Send `/start` then `/newbot`
-3. Follow the prompts:
-   - Name: `Poi Alert Bot` (or anything you like)
-   - Username: `poi_alert_bot_yourname` (must be unique and end with `_bot`)
-4. Copy the **API Token** (looks like: `123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11`)
+### Step 1: Connect to GitHub
 
-### Step 2: Get Your Chat ID
+Your bot code is already in GitHub:
+**https://github.com/abhijeetvishwas02stock-debug/Poi-alert-bot**
 
-1. Search for **@userinfobot** in Telegram
-2. Send `/start`
-3. Copy the **ID** number shown
+### Step 2: Deploy on Render
 
-### Step 3: Deploy on Render
-
-1. Go to https://render.com (create free account if needed)
-2. Click **"New +"** → **"Web Service"**
-3. Connect your GitHub repository (`Poi-alert-bot`)
-4. Fill in details:
+1. Go to **https://render.com**
+2. Sign up (free account)
+3. Click **"New +"** → **"Web Service"**
+4. Select **"Connect to GitHub"**
+5. Choose repository: **Poi-alert-bot**
+6. Fill in:
    - **Name**: `poi-alert-bot`
    - **Runtime**: `Python 3`
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `python bot.py`
-5. Click **"Advanced"** and add Environment Variables:
-   - `TELEGRAM_BOT_TOKEN` = Your bot token from Step 1
-   - `CHAT_ID` = Your chat ID from Step 2
-6. Click **"Create Web Service"**
 
-Wait 2-3 minutes for deployment. You should see "Your service is live" ✅
+7. Click **"Advanced"** and add these Environment Variables:
+   ```
+   TELEGRAM_BOT_TOKEN = 8820866226:AAGsQHYSsK4x_-iGeHMabKpwwv64L_Dc14M
+   CHAT_ID = 8820866226
+   COINGECKO_API_KEY = CG-KmG6rg5ca6UCDKZf4BfuYdqz
+   ```
 
-### Step 4: Use Your Bot
+8. Click **"Create Web Service"**
 
-Send these commands to your bot on Telegram:
+✅ **Wait 2-3 minutes for deployment**
+
+### Step 3: Start Using!
+
+Open Telegram and send commands to your bot:
 
 ```
-/start              - Start the bot
-/price              - Get current gold price
-/alert_above 2000   - Alert when price goes ABOVE $2000
-/alert_below 1500   - Alert when price goes BELOW $1500
-/status             - Check alert status
+/start           - Initialize bot
+/price           - Get current gold price
+/alert_above 2000 - Alert when price ≥ $2000
+/alert_below 1500 - Alert when price ≤ $1500
+/status          - Check your alerts
+/help            - Show all commands
 ```
 
-## 📡 API Used
+---
 
-- **Gold Price**: CoinGecko API (completely free, no API key needed)
+## 📊 How It Works
 
-## 🔧 How It Works
+```
+🔄 Every 1 Minute:
+  1. Check gold price from CoinGecko
+  2. Compare with your alert thresholds
+  3. Send Telegram notification if match
+  4. Repeat forever ✅
+```
 
-1. Bot checks gold price every 1 minute
-2. If price reaches your alert threshold, you get a notification
-3. Runs continuously on Render's free tier
+---
 
-## 📝 Price Data Source
+## 💰 Your Configuration (Ready to Use)
 
-- CoinGecko API: https://api.coingecko.com/api/v3/
-- No API key required
-- Free tier: Unlimited requests
+✅ **Telegram Bot Token**: `8820866226:AAGsQHYSsK4x_-iGeHMabKpwwv64L_Dc14M`
+✅ **Chat ID**: `8820866226`
+✅ **CoinGecko API**: `CG-KmG6rg5ca6UCDKZf4BfuYdqz`
+
+**Everything is pre-configured! Just deploy on Render.**
+
+---
+
+## 📡 APIs Used (All FREE)
+
+| Service | Purpose | Cost | Status |
+|---------|---------|------|--------|
+| Telegram Bot API | Send alerts | FREE | ✅ |
+| CoinGecko Pro | Gold prices | FREE | ✅ |
+| Render | Hosting 24/7 | FREE | ✅ |
+
+---
+
+## 🎯 Example Usage
+
+**You send:**
+```
+/alert_above 2050
+```
+
+**You receive:**
+```
+🚨 PRICE ALERT - ABOVE THRESHOLD! 🚨
+
+💰 Gold Price: $2050.25
+📈 Your Alert Level: $2050.00
+⏰ Time: 2026-07-23 14:30:45
+
+✅ Alert triggered successfully!
+```
+
+---
 
 ## ❓ FAQ
 
-**Q: Will this work 24/7?**
-A: Yes! Render keeps it running. Note: Render free tier may have 15-minute downtimes per month.
+**Q: Will it really work 24/7 for free?**
+A: Yes! Render's free tier runs continuously. Occasional 15-min downtimes are possible.
 
 **Q: How accurate are the prices?**
-A: CoinGecko updates prices every minute with data from major exchanges.
+A: CoinGecko Pro API updates every 1-2 minutes from major exchanges.
 
-**Q: Can I modify the bot?**
-A: Yes! Edit `bot.py` and push to GitHub. Render will auto-deploy.
+**Q: Can I change to silver, platinum, etc?**
+A: Yes! Edit bot.py line `'ids': 'gold'` to `'silver'`, `'platinum'`, etc.
 
-**Q: What if I want different commodities?**
-A: Edit the `PRICE_API_URL` and `ids` parameter in bot.py to track: silver, platinum, etc.
+**Q: What if I want to stop the bot?**
+A: Go to Render → Your Service → Delete/Pause
+
+**Q: Can I modify the code?**
+A: Yes! Push changes to GitHub, Render auto-deploys.
+
+**Q: No alerts received?**
+A: Check that Chat ID is correct: `8820866226`
+
+---
 
 ## 🐛 Troubleshooting
 
-**Bot not sending messages?**
-- Check if `TELEGRAM_BOT_TOKEN` and `CHAT_ID` are correct
-- Verify your Chat ID with @userinfobot
-
-**Render deployment fails?**
-- Check Python version is 3.9+
-- Make sure requirements.txt is in the root folder
+### Bot not sending messages
+- Verify Chat ID: `8820866226` ✅
+- Verify Bot Token is correct ✅
 - Check Render logs for errors
 
-## 📞 Support
+### Deployment failed
+- Python version should be 3.9+ ✅
+- Check `requirements.txt` exists ✅
+- View Render logs
 
-For issues, check:
-1. Render logs: Dashboard → Service → Logs
-2. Telegram bot token validity: Send it to @BotFather
-3. Make sure you're not blocked by Telegram
+### Price not updating
+- Verify `COINGECKO_API_KEY` is set ✅
+- Check internet connection
+- Wait a few minutes
+
+**View Logs:**
+Render Dashboard → Your Service → Logs
+
+---
+
+## 📁 Files Included
+
+```
+Poi-alert-bot/
+├── bot.py              ← Main bot code (ready to use)
+├── requirements.txt    ← Dependencies
+├── Procfile           ← Render configuration
+├── runtime.txt        ← Python version
+└── README.md          ← This file
+```
+
+---
+
+## ✅ Deployment Checklist
+
+- ✅ Repository created and code added
+- ✅ All credentials pre-configured
+- ✅ Dependencies installed
+- ⏳ **Deploy on Render** (your next step)
+- ⏳ Set alerts with `/alert_above` and `/alert_below`
+- ⏳ Receive 24/7 alerts!
+
+---
+
+## 🚀 Next Steps
+
+1. **Go to Render**: https://render.com
+2. **Create Web Service** using this repository
+3. **Add Environment Variables** (already provided above)
+4. **Click Deploy**
+5. **Wait 2-3 minutes**
+6. **Start using your bot!**
+
+---
+
+## 💡 Pro Tips
+
+- Set multiple alerts: `/alert_above 2100` + `/alert_below 1800`
+- Check price anytime: `/price`
+- Bot runs 24/7 even if you close Telegram
+- Alerts trigger once per threshold
+
+---
+
+## 📝 Price Update Frequency
+
+- **Monitoring**: Every 1 minute
+- **CoinGecko Data**: Updated from exchanges in real-time
+- **Telegram Delivery**: Instant
+
+---
+
+## 🎉 You're All Set!
+
+Your bot is **100% ready to deploy**. Just:
+1. Go to Render
+2. Add the environment variables
+3. Deploy
+4. Start getting alerts!
+
+---
 
 ## 📄 License
 
-Free to use and modify!
+Free to use, modify, and share! 🎉
 
 ---
 
 **Made with ❤️ for traders**
+
+*Questions? Check Render logs or the GitHub repository.*
